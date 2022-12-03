@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Arca
+Comment=Archive manager
+TryExec=arca
+Exec=arca %U
+Terminal=false
+Type=Application
+GenericName=Archiver
+StartupNotify=true
+Icon=arca
+Categories=Qt;KDE;Utility;Archiving;Compression;X-KDE-Utilities-File;

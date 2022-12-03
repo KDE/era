@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+  <id>org.kde.arca.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-3.0</project_license>
+  <name>Arca</name>
+  <summary>Archive manager</summary>
+  <description>
+    <p>Browse, create and manage archives.</p>
+  </description>
+  <url type="homepage">https://mauikit.org/</url>
+  <url type="bugtracker">https://invent.kde.org/maui/arca/-/issues</url>
+  <url type="donation">https://www.kde.org/community/donations</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Arca - mobile version</caption>
+      <image type="source" width="2899" height="2326">
+        https://mauikit.org/wp-content/uploads/2022/11/arca.jpg
+      </image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>arca</binary>
+  </provides>
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </recommends>
+  <content_rating type="oars-1.0"/>
+  <project_group>KDE</project_group>
+  <releases>
+    <release version="0.1.0" date="2022-11-25">
+      <url>https://mauikit.org/blog/maui-2-2-1-release/</url>
+    </release>
+  </releases>
+</component>
