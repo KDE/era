@@ -23,7 +23,16 @@ Maui.AppViewLoader
 
 Maui.AppView.title: i18n("Clock")
 Maui.AppView.iconName: "clock"
-Maui.Page {}
+Maui.Page
+{
+
+    AnalogClock
+    {
+        anchors.centerIn: parent
+        city: "Medellin"
+        shift: 0
+    }
+}
 
 }
 

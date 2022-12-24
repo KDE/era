@@ -3,4 +3,17 @@
         <file>logo.svg</file>
         <file>logo.png</file>
     </qresource>
+    <qresource prefix="/analog">
+        <file>center.png</file>
+        <file>center2.png</file>
+        <file>clock-night.png</file>
+        <file>clock.png</file>
+        <file>clock2.png</file>
+        <file>hour.png</file>
+        <file>hour2.png</file>
+        <file>minute.png</file>
+        <file>minute2.png</file>
+        <file>second2.png</file>
+        <file>second.png</file>
+    </qresource>
 </RCC>

@@ -1,15 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>previewer/VideoPreview.qml</file>
-        <file>previewer/AudioPreview.qml</file>
-        <file>previewer/DocumentPreview.qml</file>
-        <file>previewer/ImagePreview.qml</file>
-        <file>previewer/FontPreviewer.qml</file>
-        <file>previewer/TextPreview.qml</file>
-        <file>previewer/FilePreviewer.qml</file>
-        <file>previewer/DefaultPreview.qml</file>
-        <file>previewer/FileProperties.qml</file>
-        <file>ArchivePage.qml</file>
+        <file>AnalogClock.qml</file>
+        <file>DigitalClock.qml</file>
     </qresource>
 </RCC>
