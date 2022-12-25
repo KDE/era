@@ -10,50 +10,58 @@ Maui.ApplicationWindow
 {
     id: root
     title: Maui.App.about.displayName
-	
-Maui.AppViews
-{
-anchors.fill: parent
-//title: root.title
-showCSDControls: true
-
-
-Maui.AppViewLoader
-{
-
-Maui.AppView.title: i18n("Clock")
-Maui.AppView.iconName: "clock"
-Maui.Page
-{
-
-    AnalogClock
+    Maui.Style.styleType: Maui.Style.Dark
+Maui.Style.accentColor: "#ff959f"
+    Maui.AppViews
     {
-        anchors.centerIn: parent
-        city: "Medellin"
-        shift: 0
+        anchors.fill: parent
+        //title: root.title
+        showCSDControls: true
+
+        Maui.AppViewLoader
+        {
+            Maui.AppView.title: i18n("Clock")
+            Maui.AppView.iconName: "clock"
+            Maui.Page
+            {
+
+                Column
+                {
+                    anchors.centerIn: parent
+
+                    AnalogClock
+                    {
+                        city: "Medellin"
+                        shift: 0
+                    }
+                    DigitalClock
+                    {
+                        city: "Medellin"
+                        shift: 0
+                    }
+                }
+            }
+
+        }
+
+        Maui.AppViewLoader
+        {
+
+            Maui.AppView.title: i18n("Timer")
+            Maui.AppView.iconName: "timer"
+            Maui.Page {}
+
+        }
+
+        Maui.AppViewLoader
+        {
+
+            Maui.AppView.title: i18n("Alarm")
+            Maui.AppView.iconName: "alarm"
+            Maui.Page {}
+
+        }
+
     }
-}
-
-}
-
-Maui.AppViewLoader
-{
-
-Maui.AppView.title: i18n("Timer")
-Maui.AppView.iconName: "clock"
-Maui.Page {}
-
-}
-
-Maui.AppViewLoader
-{
-
-Maui.AppView.title: i18n("Alarm")
-Maui.AppView.iconName: "clock"
-Maui.Page {}
-
-}
-
-}
 
 }
