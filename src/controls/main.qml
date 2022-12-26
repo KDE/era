@@ -10,13 +10,21 @@ Maui.ApplicationWindow
 {
     id: root
     title: Maui.App.about.displayName
-    Maui.Style.styleType: Maui.Style.Dark
-Maui.Style.accentColor: "#ff959f"
+    Maui.Style.styleType: night ? Maui.Style.Dark :  Maui.Style.Light
+    Maui.Style.accentColor: "#ff959f"
+    maximumHeight: 700
+    minimumHeight: 700
+    maximumWidth: 500
+    minimumWidth: 500
+
+    property bool night: _mainClock.night
+
     Maui.AppViews
     {
         anchors.fill: parent
         //title: root.title
         showCSDControls: true
+        headBar.forceCenterMiddleContent: true
 
         Maui.AppViewLoader
         {
@@ -25,23 +33,51 @@ Maui.Style.accentColor: "#ff959f"
             Maui.Page
             {
 
-                Column
+                headBar.rightContent: ToolButton
                 {
-                    anchors.centerIn: parent
+                    icon.name: "list-add"
+                }
 
-                    AnalogClock
+                Maui.ListBrowser
+                {
+                    id: _clocksListView
+                    anchors.fill: parent
+                    snapMode: ListView.SnapOneItem
+
+                    flickable.header: Item
                     {
-                        city: "Medellin"
-                        shift: 0
+                        width: parent.width
+                        height: _mainClock.height
+
+                        AnalogClock
+                        {
+                            id: _mainClock
+                            internationalTime: false
+                            anchors.centerIn: parent
+                        }
+
                     }
-                    DigitalClock
+
+                    model: ListModel
                     {
-                        city: "Medellin"
-                        shift: 0
+                        ListElement { cityName: "New York"; timeShift: -4 }
+                        ListElement { cityName: "Oslo"; timeShift: 1 }
+                        ListElement { cityName: "Mumbai"; timeShift: 5.5 }
+                        ListElement { cityName: "Tokyo"; timeShift: 9 }
+                        ListElement { cityName: "Brisbane"; timeShift: 10 }
+                        ListElement { cityName: "Los Angeles"; timeShift: -8 }
+                    }
+
+                    delegate:  DigitalClock
+                    {
+                        //                            height: 100
+                        //                            width: 100
+                        width: ListView.view.width
+                        city: model.cityName; shift: model.timeShift
                     }
                 }
-            }
 
+            }
         }
 
         Maui.AppViewLoader

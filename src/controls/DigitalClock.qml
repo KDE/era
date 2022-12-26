@@ -13,17 +13,17 @@ spacing: Maui.Style.space.medium
 
     font.bold: true
     font.weight: Font.Black
-    font.pointSize: 24
+    font.pointSize: Maui.Style.fontSizes.big
     font.family: "Open 24 Display St"
 font.letterSpacing: Maui.Style.space.big
     padding: Maui.Style.space.big
-    property alias city: cityLabel.text
+    property string city: i18n("Local")
     property int hours
     property int minutes
     property int seconds
     property real shift
     property bool night: false
-    property bool internationalTime: false //Unset for local time
+    property bool internationalTime: true //Unset for local time
 
     function timeChanged() {
         var date = new Date;
@@ -60,14 +60,18 @@ font.letterSpacing: Maui.Style.space.big
         Label
         {
             font: clock.font
-            text: formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds)
+            text: formatTime(hours) + ":" + formatTime(minutes)
         }
 
-        Label
+        Maui.ListItemTemplate
         {
 
             id: cityLabel
-            font.family: "Monospace"
+            width: parent.width
+            label1.font.family: "Monospace"
+            label1.text: clock.city
+            label3.text: "+"+clock.shift+ "HRS"
+            label2.text: "1/11/11"
 //            font: clock.font
         }
     }
