@@ -26,6 +26,31 @@ Maui.ApplicationWindow
         showCSDControls: true
         headBar.forceCenterMiddleContent: true
 
+
+        headBar.leftContent: Loader
+        {
+            asynchronous: true
+
+            sourceComponent: Maui.ToolButtonMenu
+            {
+                icon.name: "application-menu"
+
+                MenuItem
+                {
+                    text: i18n("Settings")
+                    icon.name: "settings-configure"
+                    onTriggered: openSettingsDialog()
+                }
+
+                MenuItem
+                {
+                    text: i18n("About")
+                    icon.name: "documentinfo"
+                    onTriggered: root.about()
+                }
+            }
+        }
+
         Maui.AppViewLoader
         {
             Maui.AppView.title: i18n("Clock")
@@ -33,7 +58,9 @@ Maui.ApplicationWindow
             Maui.Page
             {
 
-                headBar.rightContent: ToolButton
+                headBar.visible: false
+
+                footBar.rightContent: ToolButton
                 {
                     icon.name: "list-add"
                 }
@@ -83,9 +110,29 @@ Maui.ApplicationWindow
         Maui.AppViewLoader
         {
 
+            Maui.AppView.title: i18n("Stopwatch")
+            Maui.AppView.iconName: "stopwatch"
+            Maui.Page
+            {
+            Stopwatch
+            {
+                anchors.fill: parent
+            }
+
+            }
+
+        }
+
+        Maui.AppViewLoader
+        {
+
             Maui.AppView.title: i18n("Timer")
             Maui.AppView.iconName: "timer"
-            Maui.Page {}
+            Maui.Page
+            {
+
+
+            }
 
         }
 

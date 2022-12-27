@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>AnalogClock.qml</file>
         <file>DigitalClock.qml</file>
+        <file>Stopwatch.qml</file>
     </qresource>
 </RCC>
