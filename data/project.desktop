@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Arca
-Comment=Archive manager
-TryExec=arca
-Exec=arca %U
+Name=Era
+Comment=Set alarms and timers, use a stopwatch, and manage world clocks
+TryExec=era
+Exec=era
 Terminal=false
 Type=Application
-GenericName=Archiver
+GenericName=Clock
 StartupNotify=true
-Icon=arca
-Categories=Qt;KDE;Utility;Archiving;Compression;X-KDE-Utilities-File;
+Icon=era
+Categories=Qt;KDE;Utility;
